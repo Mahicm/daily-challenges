@@ -35,3 +35,16 @@ def reverse_string_recursion(s):
     return reverse_string_recursion(s[1:]) + s[0]
 string = reverse_string_recursion("Hello, World!")
 print("reverse with recursion",string)  # Output: !dlroW ,olleH 
+
+
+#Best Method 5 -- Using Two Pointer Approach
+def reverse_string_two_pointer(s):
+    s=list(s)
+    left, right = 0,len(s)-1
+    while left < right:
+        s[left], s[right] = s[right], s[left]
+        left += 1
+        right -= 1
+    return "".join(s)
+s="Hello"
+print("Helo",reverse_string_two_pointer(s))
